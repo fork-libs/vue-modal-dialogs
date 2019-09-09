@@ -145,8 +145,15 @@ export declare function create<
   ...props: string[]
 ): DialogFunction<ReturnType, PropsDef>
 
+export interface DialogsWrapper extends ExtendedVue<Vue, {}, {}, {}, {}> {
+  dialogIds: number[]
+  remove(id: number): void
+}
+
+export const wrappers: DialogsWrapper[]
+
 /** Dialogs wrapper component */
-export declare const DialogsWrapper: ExtendedVue<Vue, {}, {}, {}, {}>
+export declare const DialogsWrapper: DialogsWrapper
 
 /** Install `vue-modal-dialogs` into Vue */
 export function install (vue: typeof _Vue): void

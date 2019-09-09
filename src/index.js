@@ -2,10 +2,11 @@
 
 import Vue from 'vue'
 import { create } from './create'
-import DialogsWrapper from './wrapper'
+import DialogsWrapper, { wrappers } from './wrapper'
 
 export {
   create,
+  wrappers,
   DialogsWrapper,
   Vue as DialogComponent
 }
