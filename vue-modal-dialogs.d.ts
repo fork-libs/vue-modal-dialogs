@@ -50,7 +50,7 @@ export interface DialogOptions<ReturnType, PropsDef> {
   props: string[],
 
   /** The wrapper that the dialog will be added into */
-  wrapper: string[]
+  wrapper: string
 }
 
 export interface DialogFunction<ReturnType = any, PropsDef extends object = {}> {
@@ -150,7 +150,7 @@ export interface DialogsWrapper extends ExtendedVue<Vue, {}, {}, {}, {}> {
   remove(id: number): void
 }
 
-export const wrappers: DialogsWrapper[]
+export const wrappers: { [key: string]: DialogsWrapper }
 
 /** Dialogs wrapper component */
 export declare const DialogsWrapper: DialogsWrapper
