@@ -1,6 +1,6 @@
 {
   "name": "@fork-libs/vue-modal-dialogs",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Promisify dialogs in Vue.js",
   "main": "dist/vue-modal-dialogs.cjs.js",
   "module": "dist/vue-modal-dialogs.esm.js",
