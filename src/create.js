@@ -60,8 +60,8 @@ export function create (options, ...props) {
     return null
   }
 
-  const dialogData = generateDialogData(props, component)
   return function dialogFunction (...args) {
+    const dialogData = generateDialogData(props, component)
     if (wrappers[wrapper]) {
       // Add dialog component into dialogsWrapper component
       return wrappers[wrapper].add(dialogData, args)
