@@ -1,6 +1,6 @@
 {
   "name": "@fork-libs/vue-modal-dialogs",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "Promisify dialogs in Vue.js",
   "main": "dist/vue-modal-dialogs.cjs.js",
   "module": "dist/vue-modal-dialogs.esm.js",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hjkcai/vue-modal-dialogs.git"
+    "url": "https://github.com/fork-libs/vue-modal-dialogs.git"
   },
   "keywords": [
     "vue",
@@ -30,12 +30,12 @@
     "promise",
     "promisify"
   ],
-  "author": "Jingkun Hua <huajingkun1214@gmail.com>",
+  "author": "tx-fork-libs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hjkcai/vue-modal-dialogs/issues"
+    "url": "https://github.com/fork-libs/vue-modal-dialogs/issues"
   },
-  "homepage": "https://github.com/hjkcai/vue-modal-dialogs#readme",
+  "homepage": "https://github.com/fork-libs/vue-modal-dialogs",
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.13",
     "autoprefixer": "^6.6.0",

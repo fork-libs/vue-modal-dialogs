@@ -92,17 +92,33 @@ export default {
       const id = this.id++
       let close, error
 
+      const timeoutWrapper = (cb) => (ret) => setTimeout(() => cb(ret))
+
       // It will be resolved when 'close' function is called
-      const dataPromise = new Promise((res, rej) => { close = res; error = rej })
-        .then(data => { this.remove(id); return data })
-        .catch(reason => { this.remove(id); throw reason })
+      const dataPromise = new Promise(
+        (res, rej) => {
+          close = timeoutWrapper(res)
+          error = timeoutWrapper(rej)
+        })
+        .then(data => {
+          this.remove(id)
+          return data
+        })
+        .catch(reason => {
+          this.remove(id)
+          throw reason
+        })
 
       // It will be resolved after the component instance is created
-      const instancePromise = new Promise(res => { dialogData.createdCallback = res })
+      const instancePromise = new Promise(res => {
+        dialogData.createdCallback = timeoutWrapper(res)
+      })
 
       // It will be resolves after the dialog's leave transition ends
       const transitionPromise = instancePromise
-        .then(component => new Promise(res => { component.$el.$afterLeave = res }))
+        .then(component => new Promise(res => {
+          component.$el.$afterLeave = timeoutWrapper(res)
+        }))
         .then(() => dataPromise)
 
       const finalPromise = dialogData.component.then(component => {
